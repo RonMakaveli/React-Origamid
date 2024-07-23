@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React First</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js" crossorigin></script>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+<!--
+    <script type="text/babel">
+        const App = () => {
+            return <div>Meu App</div>
+        }
+
+        class Button extends React.Component {
+            render() {
+                return <button>Comprar</button>
+            }
+        }
+
+        ReactDOM.render(<Button/>, document.getElementById('app'));
+    </script>
+
+
+        Existe um erro no código acima, na realidade não um erro propriamente dito,
+        acontece que a API ReactDOM.render foi substituída por createRoot em React 18. 
+        Para resolver esse problema, é preciso usar a nova API createRoot para renderizar esse componente.
+
+-->
+
+<!--
+    <script type="text/babel">
+        const App = () => {
+            return <div>Meu App</div>
+        }
+
+        const Button = () => {
+            return <button>Comprar</button>
+        }
+
+        ReactDOM.render(<Button/>, document.getElementById('app'));
+    </script>
+-->
+
+    <script type="text/babel">
+        const App = () => {
+            return <div>Meu App</div>
+        }
+
+        class Button extends React.Component {
+            render() {
+                return <button>Comprar</button>
+            }
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('app'))
+        root.render(<Button />)
+    </script>
+
+</body>
+</html>
