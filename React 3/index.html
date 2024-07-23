@@ -10,11 +10,13 @@
     <script src="https://unpkg.com/@babel/standalone@7/babel.min.js" crossorigin></script>
 </head>
 <body>
+    <!--
     <div id="app-javascript">
         <p>Total: <span id="total"></span></p>
         <p>Preço: R$ <span id="preco"></span></p>
         <button id="button">Comprar</button>
     </div>
+
     <script type="application/javascript">
         const total1 = document.getElementById('total');
         const preco = document.getElementById('preco');
@@ -26,6 +28,7 @@
             total.innerText = contador;
             preco.innerText = contador * 250;
         }
+        atualizarValores(contador);
 
         function handleClick(){
             contador = contador + 1;
@@ -33,7 +36,25 @@
         }
 
         button.addEventListener('click', handleClick);
+    </script>
+    -->
 
+    <div id="app-react"></div>
+
+    <script type ="text/babel">
+        const Comprar = () => {
+            const [contador, setContador] = React.useState(1);
+
+            return (
+                <div>
+                    <p>Total: {contador}</p>
+                    <p>Preço: R$ {contador * 250}</p>
+                    <button onClick={() => setContador(contador + 1)}>Comprar</button>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<Comprar />, document.getElementById('app-react'));
     </script>
 </body>
 </html>
